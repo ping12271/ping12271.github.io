@@ -28,30 +28,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 </head>
 <body>
-<!--header-->
-<header class="header">
-    <div class="container">
-        <div class="main-header">
-            <a href="/"><h1>justin</h1></a>
-            <nav>
-                <ul>
-                    <li>HOME</li>
-                    <li>SERVICE</li>
-                    <li>EXPERTISES</li>
-                    <li>WORKS</li>
-                    <li>BLOG</li>
-                    <li>CONTACT</li>
-                </ul>
-            </nav>
-            <div class="screen"></div>
-            <div class="btn-menu">
-                <i class="fa fa-bars"></i>
+<div id="wrap">
+    <!--header-->
+    <header class="header">
+        <div class="container">
+            <div class="main-header">
+                <a href="/"><h1>justin</h1></a>
+                <nav>
+                    <ul>
+                        <li>HOME</li>
+                        <li>SERVICE</li>
+                        <li>EXPERTISES</li>
+                        <li>WORKS</li>
+                        <li>BLOG</li>
+                        <li>CONTACT</li>
+                    </ul>
+                </nav>
+                <div class="screen"></div>
+                <div class="btn-menu">
+                    <i class="fa fa-bars"></i>
+                </div>
             </div>
         </div>
-    </div>
-</header>
-
-<div id="wrap">
+    </header>
     <!--home-->
     <section class="section section-home scroll">
         <div class="container">
@@ -534,26 +533,5 @@
     </footer>
     <div class="back-top">T</div>
 </div>
-
-<!--  slick  -->
-<script>
-    $(".testimonial-slideshow").slick({
-        prevArrow: $(".slick-prev"),
-        nextArrow: $(".slick-next"),
-    }),
-        $('.blog-slideshow').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            arrows: false,
-            dots: true,
-        }),
-        $('.gallery-slideshow').slick({
-            centerMode: true,
-            centerPadding: '80px',
-            slidesToShow: 3,
-            arrows: false,
-        });
-</script>
 </body>
 </html>

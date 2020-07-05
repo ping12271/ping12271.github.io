@@ -12,6 +12,7 @@ var portfolio = {
         portfolio.getScroll();
         portfolio.backTop();
         portfolio.scrollTo();
+        portfolio.slide();
     },
 
     handleSideMenu: function () {
@@ -63,17 +64,35 @@ var portfolio = {
 
     scrollTo: function () {
         $('.main-header li').on('click', function () {
-            var menuIndex = $(this).index();
-            var sectionOffset = $('.scroll').eq(menuIndex).offset();
-            console.log('@@ sectionOffset', sectionOffset);
-            var offsetTop = sectionOffset.top;
-            console.log("@@ offsetTop", offsetTop);
+            $('html').removeClass('open-side-menu');
+            const menuIndex = $(this).index();
+            const sectionOffset = $('.scroll').eq(menuIndex).offset();
+            const offsetTop = sectionOffset.top;
             $('html, body').animate({
                 scrollTop: offsetTop -60
             }, 600)
         })
     },
 
+    slide: function () {
+        $('.testimonial-slideshow').slick({
+            prevArrow: $(".slick-prev"),
+            nextArrow: $(".slick-next")
+        }),
+            $('.blog-slideshow').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows: false,
+                dots: true
+            }),
+            $('.gallery-slideshow').slick({
+                centerMode: true,
+                centerPadding: '80px',
+                slidesToShow: 3,
+                arrows: false
+            });
+    }
 
 }
 
