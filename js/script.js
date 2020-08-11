@@ -27,7 +27,7 @@ var portfolio = {
 
         $(".screen").on("click", function () {
             $("html").removeClass("open-side-menu");
-        })
+        });
     },
 
     getScroll: function () {
@@ -51,15 +51,15 @@ var portfolio = {
             } else {
                 $("html").removeClass("need-back-top");
             }
-        })
+        });
     },
 
     backTop: function () {
         $('.back-top').on('click', function () {
             $('html, body').animate({
-                scrollTop:0
+                scrollTop: 0
             })
-        })
+        });
     },
 
     scrollTo: function () {
@@ -69,29 +69,45 @@ var portfolio = {
             const sectionOffset = $('.scroll').eq(menuIndex).offset();
             const offsetTop = sectionOffset.top;
             $('html, body').animate({
-                scrollTop: offsetTop -60
+                scrollTop: offsetTop
             }, 600)
-        })
+        });
     },
 
     slide: function () {
         $('.testimonial-slideshow').slick({
             prevArrow: $(".slick-prev"),
             nextArrow: $(".slick-next")
-        }),
-            $('.blog-slideshow').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: false,
-                dots: true
-            }),
-            $('.gallery-slideshow').slick({
-                centerMode: true,
-                centerPadding: '80px',
-                slidesToShow: 3,
-                arrows: false
-            });
+        });
+        $('.blog-slideshow').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: false,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+            ]
+        });
+        $('.gallery-slideshow').slick({
+            centerMode: true,
+            centerPadding: '80px',
+            slidesToShow: 3,
+            arrows: false
+        });
     }
 
 }
