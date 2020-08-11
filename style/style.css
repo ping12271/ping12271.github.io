@@ -826,13 +826,13 @@ body {
   background-color: #f7f7f7;
   padding: 100px 0;
 }
-.section-resume .container .resume-title {
+.section-resume .resume-title {
   text-align: center;
 }
-.section-resume .container .resume-title h2 {
+.section-resume .resume-title h2 {
   margin: 20px 0;
 }
-.section-resume .container .resume-title .bar {
+.section-resume .resume-title .bar {
   width: 100px;
   height: 2px;
   background-color: #333333;
@@ -840,15 +840,15 @@ body {
   margin-bottom: 60px;
   display: inline-block;
 }
-.section-resume .container .resume-contents {
+.section-resume .resume-contents {
   display: flex;
   justify-content: space-between;
 }
-.section-resume .container .resume-contents ul {
+.section-resume .resume-contents ul {
   display: flex;
   flex-direction: column;
 }
-.section-resume .container .resume-contents ul li {
+.section-resume .resume-contents ul li {
   flex: 1 1 50%;
   margin-top: 20px;
   background-color: #fff;
@@ -856,10 +856,10 @@ body {
   border-radius: 2px;
   padding: 20px;
 }
-.section-resume .container .resume-contents ul li h4 {
+.section-resume .resume-contents ul li h4 {
   margin: 7px 0;
 }
-.section-resume .container .resume-contents ul li .desc {
+.section-resume .resume-contents ul li .desc {
   display: inline-block;
   padding: 4px;
   background-color: #fd735a;
@@ -868,54 +868,54 @@ body {
   margin: 20px 0;
   font-size: 0.7em;
 }
-.section-resume .container .resume-contents ul li p {
+.section-resume .resume-contents ul li p {
   color: #6e7373;
   line-height: 1.5;
 }
-.section-resume .container .resume-contents .resume-experience {
+.section-resume .resume-contents .resume-experience {
   padding-right: 15px;
 }
-.section-resume .container .resume-contents .resume-education {
+.section-resume .resume-contents .resume-education {
   padding-left: 15px;
 }
-.section-resume .container .resume-skills {
+.section-resume .resume-skills {
   padding-top: 40px;
   display: flex;
   justify-content: space-between;
 }
-.section-resume .container .resume-skills h3 {
+.section-resume .resume-skills h3 {
   margin-bottom: 20px;
 }
-.section-resume .container .resume-skills ul {
+.section-resume .resume-skills ul {
   display: flex;
   flex-direction: column;
   border: 1px solid #eee;
   border-radius: 2px;
   background-color: #fff;
 }
-.section-resume .container .resume-skills ul li {
+.section-resume .resume-skills ul li {
   padding: 20px;
 }
-.section-resume .container .resume-skills ul li h5 {
+.section-resume .resume-skills ul li h5 {
   margin-bottom: 10px;
 }
-.section-resume .container .resume-skills ul li .skill-bar {
+.section-resume .resume-skills ul li .skill-bar {
   background-color: #ddd;
   width: 100%;
   height: 5px;
   border-radius: 3px;
 }
-.section-resume .container .resume-skills ul li .skill-value {
+.section-resume .resume-skills ul li .skill-value {
   background-color: #fd735a;
   width: 100%;
   height: 5px;
   border-radius: 3px;
 }
-.section-resume .container .resume-skills .design-skill {
+.section-resume .resume-skills .design-skill {
   flex-basis: 50%;
   padding-right: 15px;
 }
-.section-resume .container .resume-skills .coding-skill {
+.section-resume .resume-skills .coding-skill {
   flex-basis: 50%;
   padding-left: 15px;
 }
@@ -1076,6 +1076,7 @@ body {
 .section-blog .container .blog-slideshow .item .thumb img {
   width: 100%;
   height: 300px;
+  object-fit: cover;
   overflow: hidden;
 }
 .section-blog .container .blog-slideshow .item .thumb .screen {
@@ -1164,30 +1165,30 @@ body {
   padding: 100px 0;
   background-color: #f7f7f7;
 }
-.section-contact .container .contact-title {
+.section-contact .contact-title {
   text-align: center;
 }
-.section-contact .container .contact-title h2 {
+.section-contact .contact-title h2 {
   margin: 20px 0;
   display: inline-block;
 }
-.section-contact .container .contact-touch h4 {
+.section-contact .contact-touch h4 {
   margin-bottom: 10px;
 }
-.section-contact .container .contact-touch ul {
+.section-contact .contact-touch ul {
   display: flex;
   margin: 0 -15px;
 }
 @media only screen and (max-width: 768px) {
-  .section-contact .container .contact-touch ul {
+  .section-contact .contact-touch ul {
     flex-direction: column;
   }
 }
-.section-contact .container .contact-touch ul li {
+.section-contact .contact-touch ul li {
   flex: 1 1 33.333%;
   padding: 15px;
 }
-.section-contact .container .contact-touch ul li .contact-item {
+.section-contact .contact-touch ul li .contact-item {
   background-color: #fff;
   padding: 30px;
   display: flex;
@@ -1195,49 +1196,49 @@ body {
   justify-content: center;
   align-items: center;
 }
-.section-contact .container .contact-touch ul li .contact-item i {
+.section-contact .contact-touch ul li .contact-item i {
   font-size: 25px;
   margin-bottom: 20px;
 }
-.section-contact .container .contact-touch ul li .contact-item a {
+.section-contact .contact-touch ul li .contact-item a {
   text-decoration: underline;
   margin: 20px 0;
 }
-.section-contact .container .contact-form h4 {
+.section-contact .contact-form h4 {
   margin-top: 30px;
   margin-bottom: 25px;
 }
-.section-contact .container .contact-form .name-mail {
+.section-contact .contact-form .name-mail {
   display: flex;
   margin-left: -15px;
 }
 @media only screen and (max-width: 768px) {
-  .section-contact .container .contact-form .name-mail {
+  .section-contact .contact-form .name-mail {
     flex-direction: column;
   }
 }
-.section-contact .container .contact-form .name-mail input {
+.section-contact .contact-form .name-mail input {
   flex: 1 1 50%;
   padding: 20px;
   margin-bottom: 15px;
   margin-left: 15px;
 }
-.section-contact .container .contact-form .input-box {
+.section-contact .contact-form .input-box {
   display: flex;
   flex-direction: column;
 }
-.section-contact .container .contact-form .input-box input {
+.section-contact .contact-form .input-box input {
   padding: 20px;
   margin-bottom: 15px;
 }
-.section-contact .container .contact-form .input-box .comments {
+.section-contact .contact-form .input-box .comments {
   padding-bottom: 60px;
 }
-.section-contact .container .contact-form .form-btn {
+.section-contact .contact-form .form-btn {
   display: flex;
   justify-content: center;
 }
-.section-contact .container .contact-form .form-btn a {
+.section-contact .contact-form .form-btn a {
   text-align: center;
   background-color: #fd735a;
   color: #fff;
