@@ -6,13 +6,12 @@ $(function () {
 })
 
 
-var portfolio = {
+const portfolio = {
     init: function () {
         portfolio.handleSideMenu();
         portfolio.getScroll();
         portfolio.backTop();
         portfolio.scrollTo();
-        portfolio.slide();
     },
 
     handleSideMenu: function () {
@@ -64,6 +63,7 @@ var portfolio = {
 
     scrollTo: function () {
         $('.main-header li').on('click', function () {
+            $(this).addClass('is_active').siblings().removeClass('is_active');
             $('html').removeClass('open-side-menu');
             const menuIndex = $(this).index();
             const sectionOffset = $('.scroll').eq(menuIndex).offset();
@@ -73,43 +73,6 @@ var portfolio = {
             }, 600)
         });
     },
-
-    slide: function () {
-        $('.testimonial-slideshow').slick({
-            prevArrow: $(".slick-prev"),
-            nextArrow: $(".slick-next")
-        });
-        $('.blog-slideshow').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            arrows: false,
-            dots: true,
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                },
-            ]
-        });
-        $('.gallery-slideshow').slick({
-            centerMode: true,
-            centerPadding: '80px',
-            slidesToShow: 3,
-            arrows: false
-        });
-    }
-
 }
 
 

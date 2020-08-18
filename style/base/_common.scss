@@ -5,9 +5,6 @@ body {
     word-break: keep-all;
 }
 
-#wrap {
-}
-
 .container {
     max-width: 1180px;
     margin: 0 auto;
@@ -50,14 +47,6 @@ body {
 // typography
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Josefin Sans', sans-serif;
-}
-h2 {
-    font-size: 2em;
-    font-weight: 600;
-}
-h3 {
-    font-size: 1.5em;
-}
-h4 {
-    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: 2px;
 }

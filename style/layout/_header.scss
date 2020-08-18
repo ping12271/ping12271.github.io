@@ -4,77 +4,81 @@
     width: 100%;
     background: #fff;
     height: 80px;
-    box-shadow: 0 2px 15px rgba(0,0,0, 0.2);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     .show-header & {
-      position: fixed;
-      top: 0;
-      transition: 0.3s;
+        position: fixed;
+        top: 0;
+        transition: 0.3s;
     }
-    .container {
-        .main-header {
-            height: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            h1 {
-                font-size: 2em;
-            }
-            nav {
-              ul {
+    .main-header {
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            font-size: 20px;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+        nav {
+            ul {
                 display: flex;
                 @include screen-sm {
-                  position: fixed;
-                  top: 0;
-                  bottom: 0;
-                  left: -320px;
-                  z-index: 1100;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
-                  width: 320px;
-                  background-color: #fff;
-                  transition: .4s;
-                  .open-side-menu & {
-                    left: 0;
-                  }
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: -320px;
+                    z-index: 1100;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 320px;
+                    background-color: #fff;
+                    transition: .4s;
+                    .open-side-menu & {
+                        left: 0;
+                    }
                 }
                 li {
-                  padding: 15px;
-                  cursor: pointer;
-                  &:hover {
-                    color: #fd735a;
-                  }
-                  @include screen-sm {
-                    padding: 20px 0;
-                  }
+                    font-family: "Josefin Sans", sans-serif;
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #878d8d;
+                    padding: 15px;
+                    cursor: pointer;
+                    &.is_active {
+                        color: #fd735a;
+                    }
+                    @include screen-sm {
+                        padding: 20px 0;
+                    }
                 }
-              }
             }
-          .screen {
+        }
+        .screen {
             position: fixed;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
             z-index: 100;
-            background: rgba(0,0,0, 0.6);
+            background: rgba(0, 0, 0, 0.6);
             display: none;
             .open-side-menu & {
-              display: block;
+                display: block;
             }
-          }
-          .btn-menu {
+        }
+        .btn-menu {
             font-size: 26px;
             color: #333;
             cursor: pointer;
             display: none;
             @include screen-sm {
-              display: flex;
-              align-items: center;
-              padding: 0 10px;
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
             }
-          }
         }
     }
 }
