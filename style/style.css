@@ -769,66 +769,53 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f7f7f7;
   padding: 100px 0;
 }
-.section-resume .resume-contents h3 {
+.section-resume h3 {
   font-size: 20px;
   color: #333;
   font-weight: 500;
   margin-bottom: 20px;
 }
-.section-resume .resume-contents .experience ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-.section-resume .resume-contents .experience ul li {
-  flex: 100%;
-}
-.section-resume .resume-contents .experience .item {
+.section-resume .experience .item {
   padding: 24px;
   background-color: #fff;
   border: 1px solid #eee;
   border-radius: 2px;
 }
-.section-resume .resume-contents .experience .item h4 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #333;
-  margin: 7px 0;
-}
-.section-resume .resume-contents .experience .item .description {
+.section-resume .experience .item .description {
   display: inline-block;
   padding: 4px;
   background-color: #fd735a;
   border-radius: 3px;
   color: #fff;
-  margin: 16px 0;
+  margin-bottom: 15px;
   font-size: 12px;
 }
-.section-resume .resume-contents .experience .item p {
+.section-resume .experience .item p {
   color: #6e7373;
   line-height: 1.5;
 }
-.section-resume .resume-contents .experience .skill h3 {
+.section-resume .skill {
   margin-top: 30px;
 }
-.section-resume .resume-contents .experience .skill .item {
+.section-resume .skill .item {
   padding: 19px;
   background-color: #fff;
   border-radius: 2px;
   border: 1px solid #eee;
 }
-.section-resume .resume-contents .experience .skill .item h5 {
+.section-resume .skill .item h5 {
   font-size: 14px;
   color: #333;
   font-weight: 400;
   margin-bottom: 10px;
 }
-.section-resume .resume-contents .experience .skill .item .skill-bar {
+.section-resume .skill .item .skill-bar {
   background-color: #ddd;
   width: 100%;
   height: 5px;
   border-radius: 3px;
 }
-.section-resume .resume-contents .experience .skill .item .skill-value {
+.section-resume .skill .item .skill-value {
   background-color: #fd735a;
   width: 100%;
   height: 5px;
@@ -968,7 +955,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
   font-weight: 400;
   padding: 10px;
-  cursor: pointer;
 }
 
 .section-contact {

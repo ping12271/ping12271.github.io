@@ -1,6 +1,3 @@
-
-// ready 함수 - dom이 렌더링 된후에 마지막으로 실행된다.
-// dom 이란 document object model로 html을 말한다.
 $(function () {
     portfolio.init();
 })
@@ -14,15 +11,9 @@ const portfolio = {
         portfolio.scrollTo();
         portfolio.slide();
         portfolio.AOS();
-        portfolio.dataFade();
     },
 
     handleSideMenu: function () {
-        // 시나리오
-        // $() 셀렉터 함수는 css셀렉터를 이용하여 dom을 선택할수 있다
-        // 버튼메뉴를 선택해서 click이벤트가 일어났을때
-        // html을 선택해서 addClass를 해준다. 구분점이 되는.
-        // $함수는 제이쿼리 오브젝트를 리턴한다.
         $(".btn-menu").on("click", function () {
             $("html").addClass("open-side-menu");
         })
@@ -85,20 +76,6 @@ const portfolio = {
 
     AOS: function () {
         AOS.init();
-    },
-
-    dataFade: function () {
-        $(window).on('scroll', function () {
-            const sct = $(this).scroll.top();
-            $("[data-fade]").each(function () {
-                const oft = $(this).offset.top();
-                if(sct > oft-20) {
-                    $(this).addClass('on')
-                } else {
-                    $(this).removeClass('on')
-                }
-            })
-        })
     }
 };
 
