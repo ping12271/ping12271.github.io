@@ -454,77 +454,14 @@ body {
   word-break: keep-all;
 }
 
+::selection {
+  background-color: #fd735a;
+}
+
 .container {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 15px;
-}
-
-.blind {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  width: 1px;
-  height: 1px;
-}
-
-.pull-left {
-  float: left;
-}
-
-.pull-right {
-  float: right;
-}
-
-.por {
-  position: relative;
-}
-
-.poa {
-  position: absolute;
-}
-
-.pof {
-  position: fixed;
-}
-
-.dtb {
-  display: table;
-}
-
-.dtbc {
-  display: table-cell;
-}
-
-.vat {
-  vertical-align: top;
-}
-
-.vam {
-  vertical-align: middle;
-}
-
-.vab {
-  vertical-align: bottom;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .shadow-line {
@@ -755,7 +692,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-service {
-  padding: 100px 0;
+  padding: 200px 0 100px 0;
 }
 .section-service .service-contents ul {
   display: flex;
@@ -789,15 +726,11 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #eee;
   border-radius: 2px;
   transform: none;
+  transition: 0.5s;
 }
 .section-service .service-contents ul .item:hover {
   transform: translateY(-5px);
-  transition: 0.5s;
   box-shadow: 0 4px 8px rgba(134, 151, 168, 0.1);
-}
-.section-service .service-contents ul .item:hover {
-  transform: translateY(-5px);
-  transition: 0.5s;
 }
 .section-service .service-contents ul .item h4 {
   color: #fd735a;
@@ -811,6 +744,25 @@ h1, h2, h3, h4, h5, h6 {
   color: #333;
   margin-top: 15px;
   padding: 10px;
+}
+.section-service .service-contents ul .item.on {
+  transition: none;
+  opacity: 1;
+}
+.section-service .service-contents ul [data-fade=left] {
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.section-service .service-contents ul [data-fade=right] {
+  transform: translateX(40px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.section-service .service-contents ul [data-fade=bottom] {
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .section-resume {
@@ -913,10 +865,10 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   border: 1px solid #eeeeee;
   transform: none;
+  transition: 0.5s;
 }
 .section-portfolio .item:hover {
   transform: translateY(-5px);
-  transition: 0.5s;
 }
 .section-portfolio .item .thumb {
   position: relative;
@@ -936,7 +888,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
   opacity: 0;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.5s;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -946,36 +898,45 @@ h1, h2, h3, h4, h5, h6 {
 .section-portfolio .item .thumb .screen:hover {
   opacity: 1;
 }
+.section-portfolio .item .thumb .screen:hover p, .section-portfolio .item .thumb .screen:hover em {
+  opacity: 1;
+  transition: 0.5s;
+  transform: none;
+}
+.section-portfolio .item .thumb .screen p {
+  opacity: 0;
+  transform: translateY(50px);
+}
 .section-portfolio .item .thumb .screen em {
+  opacity: 0;
   font-size: 21px;
 }
-.section-portfolio .btn {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
+.section-portfolio .item .desc {
+  padding: 15px;
+  background-color: rgba(141, 156, 173, 0.07);
 }
-.section-portfolio .btn a {
-  background-color: #fd735a;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  padding: 10px;
-  margin: 0 5px;
+.section-portfolio .item .desc h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
-.section-portfolio .btn a:hover {
-  background-color: #dc5d46;
+.section-portfolio .item .desc p {
+  font-size: 14px;
+  color: #878d8d;
 }
 
 .section-hire {
-  padding: 150px 0;
-  background-image: url("../images/freelance.jpg");
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+  background: url("../images/freelance.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  position: relative;
 }
 .section-hire .black {
   position: absolute;
+  z-index: 1;
   top: 0;
   bottom: 0;
   left: 0;
@@ -985,6 +946,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .section-hire .hire-desc {
   position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1039,10 +1001,10 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   transform: none;
+  transition: 0.5s;
 }
 .section-contact .contact-touch .item:hover {
   transform: translateY(-5px);
-  transition: 0.5s;
   box-shadow: 0 4px 8px rgba(134, 151, 168, 0.1);
 }
 .section-contact .contact-touch .item i {
@@ -1110,7 +1072,7 @@ h1, h2, h3, h4, h5, h6 {
 .back-top {
   position: fixed;
   bottom: -80px;
-  right: 30px;
+  right: 20px;
   width: 60px;
   height: 60px;
   z-index: 1000;

@@ -12,6 +12,9 @@ const portfolio = {
         portfolio.getScroll();
         portfolio.backTop();
         portfolio.scrollTo();
+        portfolio.slide();
+        portfolio.AOS();
+        portfolio.dataFade();
     },
 
     handleSideMenu: function () {
@@ -73,7 +76,31 @@ const portfolio = {
             }, 600)
         });
     },
-}
+
+    slide: function () {
+        $('.hire-btn').on('click', function () {
+            $('.pick').toggleClass('active');
+        });
+    },
+
+    AOS: function () {
+        AOS.init();
+    },
+
+    dataFade: function () {
+        $(window).on('scroll', function () {
+            const sct = $(this).scroll.top();
+            $("[data-fade]").each(function () {
+                const oft = $(this).offset.top();
+                if(sct > oft-20) {
+                    $(this).addClass('on')
+                } else {
+                    $(this).removeClass('on')
+                }
+            })
+        })
+    }
+};
 
 
 
