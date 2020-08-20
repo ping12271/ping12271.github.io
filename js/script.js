@@ -10,7 +10,7 @@ const portfolio = {
         portfolio.backTop();
         portfolio.scrollTo();
         portfolio.slide();
-        portfolio.AOS();
+        portfolio.aos();
     },
 
     handleSideMenu: function () {
@@ -74,7 +74,7 @@ const portfolio = {
         });
     },
 
-    AOS: function () {
+    aos: function () {
         AOS.init();
     }
 };
