@@ -173,6 +173,15 @@ export function LoadingScreen({
       aria-label="Loading"
     >
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+      <div className="relative z-10 flex flex-col items-center">
+        <h2 data-animate="loading-text" className="en text-white/80">
+          LOADING
+        </h2>
+        <div
+          data-animate="loading-text"
+          className="mt-4 w-12 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"
+        />
+      </div>
     </div>
   );
 }

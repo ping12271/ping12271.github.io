@@ -10,32 +10,45 @@ import admin2 from "@/assets/admin2.png";
 import pos from "@/assets/pos.png";
 import lemon from "@/assets/lemon.png";
 import eureka from "@/assets/eureka.png";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import MenuOverlay from "@/components/MenuOverlay";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const HomeSection = () => {
   return (
-    <section id="home">
-      <div className="flex items-center justify-end max-md:items-end py-20 lg:py-60 px-8 lg:px-20 min-h-svh w-screen relative">
-        <div className="absolute left-[20%] top-[50%] h-auto z-0 max-md:top-[30%] max-md:left-[50%]">
-          <img
-            src={astronaut}
-            alt="astronaut"
-            className="w-[22vw] max-md:w-[45vw] h-auto animate-[astronaut_20s_ease-in-out_infinite]"
-          />
+    <section
+      id="home"
+      className="relative w-screen min-h-svh flex items-center overflow-hidden"
+    >
+      <div className="absolute left-[15%] top-[45%] z-0 opacity-80 max-md:top-[25%] max-md:left-[40%] pointer-events-none">
+        <img
+          src={astronaut}
+          alt="astronaut"
+          className="w-[20vw] max-md:w-[40vw] h-auto animate-[astronaut_20s_ease-in-out_infinite]"
+        />
+      </div>
+
+      <div className="relative z-10 w-full px-8 lg:px-24 flex flex-col items-end text-right">
+        <div className="mb-12">
+          <h1 className="portfolio-title en text-[14vw] font-black tracking-tighter text-gradient">
+            Portfolio
+          </h1>
+          <p className="sub-text text-[2.5vw] max-md:text-[1.5rem] font-light tracking-[0.5em] text-white/60 mr-2">
+            WEB PUBLISHER
+          </p>
         </div>
-        <div className="flex flex-col items-end">
-          <div className="uppercase text-gradient leading-none">
-            <h1 className="en text-[15vw]">portfolio</h1>
-            <h2 className="en text-[2rem] text-right">web publisher</h2>
-          </div>
-          <div className="mt-[10vw]">
-            <p className="text-white/90 text-2xl leading-relaxed">
-              안녕하세요, 5년 차 웹 퍼블리셔 신혜은입니다. <br /> React 기반
-              프로젝트에서 퍼블리싱 체계를 설계하고, <br />
-              효율적인 구조와 높은 퍼포먼스를 만들어내는 데 집중합니다.
-            </p>
-          </div>
+
+        <div className="max-w-2xl mt-8">
+          <p className="sub-text text-white/80 text-[1.35rem] max-md:text-[1.1rem] leading-relaxed break-keep">
+            단순히 화면을 그리는 것을 넘어, <br />
+            <strong className="text-white font-medium text-gradient">
+              재사용 가능한 컴포넌트 아키텍처
+            </strong>
+            를 설계합니다. <br />
+            5년의 실무 경험을 바탕으로 React 생태계에서 <br />
+            최적의 퍼포먼스와 확장성을 고민하는 신혜은입니다.
+          </p>
         </div>
       </div>
     </section>
@@ -112,44 +125,70 @@ const WorkSection = () => {
   return (
     <section
       id="work"
-      className="min-h-svh w-screen py-60 flex flex-col items-center relative"
+      className="relative w-screen py-40 lg:py-60 flex flex-col items-center"
     >
-      <div className="absolute max-w-[600px] top-0 -left-[20%] -z-1 animate-[moon_180s_ease-in-out_infinite]">
-        <img src={moon} alt="" />
-      </div>
-
-      <div className="relative px-7 lg:px-20 w-full max-w-[1900px] flex flex-col justify-center">
-        <div className="flex flex-wrap items-baseline mb-10 text-gradient">
-          <h2 className="text-[15vw] en tracking-tighter leading-none">work</h2>
-          <span className="text-lg">클릭하면 상세 화면으로 이동합니다!</span>
+      <div className="relative px-7 lg:px-24 w-full max-w-[1440px]">
+        <div className="flex flex-col mb-32 relative">
+          <h2 className="en text-[15vw] font-black text-white/[0.06] absolute -top-24 -left-10 select-none">
+            ARCHIVE
+          </h2>
+          <div className="relative z-10 pl-2">
+            <h2 className="en text-8xl max-md:text-6xl mb-6 text-white">
+              Work
+            </h2>
+            <p className="en text-gradient text-xl max-md:text-base font-medium uppercase opacity-90">
+              System UI & Component Architecture
+            </p>
+          </div>
         </div>
 
-        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full">
+        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-32 w-full relative z-10">
           {PROJECT_LIST.map((project) => (
-            <li key={project.id} className="group">
+            <li key={project.id} className="group relative">
               <a
                 href={project.link}
                 target="_blank"
-                rel="noopener noreferrer"
-                className={`project-card content-${project.id} block rounded-lg border overflow-hidden border-white/10 transition-all duration-500 group-hover:rotate-[5deg]`}
+                className="block relative overflow-hidden rounded-xl border border-white/5 group-hover:border-white/20 transition-all duration-500"
               >
-                <div className="aspect-video">
+                <div className="aspect-video overflow-hidden">
                   <img
                     src={project.image}
-                    className="w-full h-full object-cover"
-                    alt=""
+                    className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                    alt={project.title}
                   />
                 </div>
+
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
+                  <span className="en tracking-[0.3em] border border-white/30 px-6 py-2 rounded-full">
+                    VIEW DETAILS
+                  </span>
+                </div>
               </a>
-              <div className="p-5">
-                <h3 className="text-white text-2xl mb-1">{project.title}</h3>
-                <span className="text-gradient group-hover:text-white transition-colors">
+
+              <div className="mt-6 px-2">
+                <div className="flex justify-between items-end mb-2">
+                  <h3 className="text-2xl font-bold tracking-tight group-hover:text-gradient transition-all duration-300">
+                    {project.title}
+                  </h3>
+                  <span className="en opacity-70 tracking-widest pb-1">
+                    0{project.id}
+                  </span>
+                </div>
+                <p className="text-white/40 text-sm tracking-wide">
                   {project.desc}
-                </span>
+                </p>
               </div>
             </li>
           ))}
         </ul>
+
+        <div className="absolute max-w-[50%] bottom-0 -right-20 -z-1 pointer-events-none">
+          <img
+            src={moon}
+            className="opacity-15 mix-blend-screen grayscale animate-[moon_180s_ease-in-out_infinite]"
+            alt=""
+          />
+        </div>
       </div>
     </section>
   );
@@ -158,51 +197,69 @@ const WorkSection = () => {
 const ContactSection = () => (
   <section
     id="contact"
-    className="flex flex-col justify-center relative overflow-hidden px-7 lg:px-20 py-60"
+    className="relative min-h-svh flex flex-col justify-center items-center overflow-hidden px-7 lg:px-20 py-60"
   >
-    <div className="absolute right-0 bottom-0 -z-1 w-[100vw]">
+    <div className="absolute right-[-10%] bottom-[-20%] -z-1 w-[120vw] opacity-40 pointer-events-none">
       <img
         src={mars}
         alt="mars"
-        className="w-full animate-[mars_180s_ease-in-out_infinite]"
+        className="w-full h-auto animate-[mars_180s_ease-in-out_infinite] mix-blend-screen grayscale-[0.3]"
       />
     </div>
 
-    <h3 className="en uppercase text-[13vw] tracking-[-2vw] text-gradient">
-      contact me
-    </h3>
-    <ul className="pl-8 flex flex-col gap-[2%]">
-      <li>
-        <a
-          href="mailto:ping12271@hanmail.net"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer text-[3vw] text-gradient hover:underline"
-        >
-          - Mail : ping12271@hanmail.net
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/ping12271"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer text-[3vw] text-gradient hover:underline"
-        >
-          - Github
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.notion.so/5-32d415da99ef80c697e8cde57578e508?source=copy_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="cursor-pointer text-[3vw] text-gradient hover:underline"
-        >
-          - 이력서보기
-        </a>
-      </li>
-    </ul>
+    <div className="relative z-10 w-full max-w-[1200px] flex flex-col items-center text-center">
+      <div className="en mb-24 relative group">
+        <h3 className="font-black text-[15vw] tracking-[-0.05em] leading-none text-white/5 absolute -top-16 left-1/2 -translate-x-1/2 select-none whitespace-nowrap">
+          Get In Touch
+        </h3>
+        <h3 className="font-black text-8xl max-md:text-5xl tracking-tighter text-gradient relative z-10">
+          Contact Me
+        </h3>
+        <p className="mt-4 text-white/40 text-lg tracking-[0.4em]">
+          Let's Build Something Great
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+        {[
+          {
+            label: "Mail",
+            value: "ping12271@hanmail.net",
+            href: "mailto:ping12271@hanmail.net",
+          },
+          {
+            label: "Github",
+            value: "github.com/ping12271",
+            href: "https://github.com/ping12271",
+          },
+          {
+            label: "Resume",
+            value: "View Portfolio PDF",
+            href: "https://www.notion.so/5-32d415da99ef80c697e8cde57578e508",
+          },
+        ].map((item, index) => (
+          <a
+            key={index}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-10 rounded-2xl border border-white/5 bg-white/[0.03] backdrop-blur-xl transition-all duration-500 hover:border-white/20 hover:translate-y-[-10px] hover:bg-white/[0.05]"
+          >
+            <span className="en block text-[1.5rem] text-white/60 mb-4">
+              {item.label}
+            </span>
+            <span className="block text-xl font-medium text-white/90 group-hover:text-gradient transition-colors break-all">
+              {item.value}
+            </span>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-transparent via-[hsl(var(--secondary))] to-transparent transition-all duration-500 group-hover:w-full" />
+          </a>
+        ))}
+      </div>
+
+      <div className="mt-32 opacity-80 text-[0.7rem] tracking-widest">
+        © 2026 SHIN HYEEUN. ALL RIGHTS RESERVED.
+      </div>
+    </div>
   </section>
 );
 
@@ -226,30 +283,33 @@ export function HomePage() {
       id="wrap"
       className="w-screen min-h-svh overflow-x-hidden text-white relative overflow-y-auto"
     >
-      <nav className="fixed top-0 w-full z-50 flex justify-between p-7">
+      <nav className="fixed top-0 left-0 w-full z-[110] flex justify-between items-start p-8 lg:p-12 pointer-events-none">
         <button
           onClick={() => handleScrollToSection("home")}
-          className="en text-gradient text-[2rem] leading-10 transition-opacity duration-100 opacity-1 hover:opacity-80"
+          className="pointer-events-auto group flex flex-col items-start"
         >
-          SHIN
-          <br />
-          HYEEUN
+          <span className="en text-[1.2rem] font-black leading-tight text-white group-hover:text-gradient transition-all duration-300">
+            SHIN
+            <br />
+            HYEEUN
+          </span>
         </button>
-        <div>
+        <div className="pointer-events-auto">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="en z-[60] uppercase tracking-widest text-gradient text-[2rem]"
+            className=" uppercase tracking-[0.2em] text-[1.2rem] leading-tight  text-white/90 group transition-all duration-300 flex items-center gap-2"
           >
-            {isMenuOpen ? "Close" : "Menu"}
+            <span className="max-md:hidden text-[0.7rem] opacity-70">
+              EXPLORE
+            </span>
+            <span className="en font-black group-hover:text-gradient">
+              {isMenuOpen ? "Close" : "Menu"}
+            </span>
           </button>
         </div>
       </nav>
 
-      <MenuOverlay
-        isOpen={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)}
-        onItemClick={handleScrollToSection}
-      />
+      <MenuOverlay isOpen={isMenuOpen} onItemClick={handleScrollToSection} />
 
       <div id="inner" className="relative z-10">
         <HomeSection />

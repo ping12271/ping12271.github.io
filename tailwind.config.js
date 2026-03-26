@@ -54,15 +54,18 @@ export default {
     plugin(function ({ addUtilities }) {
       addUtilities({
         ".text-gradient": {
-          background:
-            "linear-gradient(60deg, hsl(var(--secondary)), hsl(var(--third)))",
+          "background-image":
+            "linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--third)) 100%)",
+          "background-clip": "text",
           "-webkit-background-clip": "text",
           "-webkit-text-fill-color": "transparent",
-          "mix-blend-mode": "exclusion",
+          color: "transparent",
+          filter: "drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1))",
+          // 'mix-blend-mode': 'exclusion', // 필요시 주석 해제
         },
         ".bg-gradient": {
-          background:
-            "linear-gradient(60deg, hsl(var(--secondary)), hsl(var(--third)))",
+          "background-image":
+            "linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--third)))",
         },
       });
     }),

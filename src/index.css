@@ -66,6 +66,9 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    --secondary: 183 100% 51%;
+    --third: 233 94% 56%;
   }
 
   * {
@@ -74,20 +77,5 @@
 
   body {
     @apply bg-background text-foreground;
-  }
-
-  #home {
-    --secondary: 183 100% 51%;
-    --third: 233 94% 56%;
-  }
-
-  #work {
-    --secondary: 29 100% 55%;
-    --third: 2 82% 55%;
-  }
-
-  #contact {
-    --secondary: 160 100% 45%;
-    --third: 180 100% 25%;
   }
 }

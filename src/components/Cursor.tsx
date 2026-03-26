@@ -1,26 +1,22 @@
 import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const Cursor: React.FC = () => {
   const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onMove = (e: MouseEvent) => {
+    const moveGlow = (e: MouseEvent) => {
       if (glowRef.current) {
-        glowRef.current.style.background = `
-            radial-gradient(
-              400px circle at ${e.clientX}px ${e.clientY}px, 
-              rgba(40, 140, 255, 0.05), 
-              transparent 80%
-            )
-          `;
+        gsap.to(glowRef.current, {
+          background: `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(100, 180, 255, 0.07), transparent 80%)`,
+          duration: 0.8,
+          ease: "power2.out",
+        });
       }
     };
 
-    window.addEventListener("mousemove", onMove);
-
-    return () => {
-      window.removeEventListener("mousemove", onMove);
-    };
+    window.addEventListener("mousemove", moveGlow);
+    return () => window.removeEventListener("mousemove", moveGlow);
   }, []);
 
   return (
@@ -31,7 +27,9 @@ const Cursor: React.FC = () => {
         inset: 0,
         pointerEvents: "none",
         zIndex: 1,
-        transition: "background 0.2s ease-out",
+        mixBlendMode: "screen",
+        filter: "blur(40px)",
+        transition: "background 0.3s ease-out",
       }}
     />
   );
