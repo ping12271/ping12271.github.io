@@ -10,10 +10,8 @@ import admin2 from "@/assets/admin2.png";
 import pos from "@/assets/pos.png";
 import lemon from "@/assets/lemon.png";
 import eureka from "@/assets/eureka.png";
-import { useLayoutEffect, useState } from "react";
+import { useState } from "react";
 import MenuOverlay from "@/components/MenuOverlay";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const HomeSection = () => {
   return (
@@ -41,13 +39,14 @@ const HomeSection = () => {
 
         <div className="max-w-2xl mt-8">
           <p className="sub-text text-white/80 text-[1.35rem] max-md:text-[1.1rem] leading-relaxed break-keep">
-            단순히 화면을 그리는 것을 넘어, <br />
-            <strong className="text-white font-medium text-gradient">
-              재사용 가능한 컴포넌트 아키텍처
+            <strong className="text-gradient">
+              안녕하세요, 5년 차 웹 퍼블리셔 신혜은입니다.
             </strong>
-            를 설계합니다. <br />
-            5년의 실무 경험을 바탕으로 React 생태계에서 <br />
-            최적의 퍼포먼스와 확장성을 고민하는 신혜은입니다.
+            <br />
+            단순한 마크업을 넘어 재사용 가능한 컴포넌트 구조를 고민하고,
+            <br />
+            React 환경에서 퍼포먼스와 유지보수성을 함께 챙기는 개발을
+            지향합니다.
           </p>
         </div>
       </div>
@@ -166,14 +165,9 @@ const WorkSection = () => {
               </a>
 
               <div className="mt-6 px-2">
-                <div className="flex justify-between items-end mb-2">
-                  <h3 className="text-2xl font-bold tracking-tight group-hover:text-gradient transition-all duration-300">
-                    {project.title}
-                  </h3>
-                  <span className="en opacity-70 tracking-widest pb-1">
-                    0{project.id}
-                  </span>
-                </div>
+                <h3 className="text-2xl font-bold tracking-tight group-hover:text-gradient transition-all duration-300">
+                  {project.title}
+                </h3>
                 <p className="text-white/40 text-sm tracking-wide">
                   {project.desc}
                 </p>
@@ -234,7 +228,7 @@ const ContactSection = () => (
           },
           {
             label: "Resume",
-            value: "View Portfolio PDF",
+            value: "이력서 바로가기",
             href: "https://www.notion.so/5-32d415da99ef80c697e8cde57578e508",
           },
         ].map((item, index) => (
@@ -283,7 +277,7 @@ export function HomePage() {
       id="wrap"
       className="w-screen min-h-svh overflow-x-hidden text-white relative overflow-y-auto"
     >
-      <nav className="fixed top-0 left-0 w-full z-[110] flex justify-between items-start p-8 lg:p-12 pointer-events-none">
+      <nav className="fixed top-0 left-0 w-full z-[110] flex justify-between items-center p-8 lg:p-12 pointer-events-none">
         <button
           onClick={() => handleScrollToSection("home")}
           className="pointer-events-auto group flex flex-col items-start"
