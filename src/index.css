@@ -76,18 +76,18 @@
     @apply bg-background text-foreground;
   }
 
-  .theme-home {
+  #home {
     --secondary: 183 100% 51%;
     --third: 233 94% 56%;
   }
 
-  .theme-work {
-    --secondary: 29 100% 55%; /* #ff891b */
-    --third: 2 82% 55%; /* #ea322c */
+  #work {
+    --secondary: 29 100% 55%;
+    --third: 2 82% 55%;
   }
 
-  .theme-contact {
-    --secondary: 0 0% 67%; /* #acacac */
-    --third: 0 0% 30%; /* #4d4d4d */
+  #contact {
+    --secondary: 160 100% 45%;
+    --third: 180 100% 25%;
   }
 }
