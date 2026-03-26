@@ -45,7 +45,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onItemClick }) => {
       className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-xl flex items-center justify-center opacity-0 invisible"
     >
       <ul ref={listRef} className="text-center flex flex-col gap-10">
-        {["home", "work", "contact"].map((item, index) => (
+        {["home", "work", "contact"].map((item) => (
           <li
             key={item}
             className="group cursor-pointer overflow-hidden py-2"

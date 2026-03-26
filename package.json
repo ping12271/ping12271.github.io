@@ -2,7 +2,7 @@
   "name": "space-portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ping12271.github.io/space-portfolio",
+  "homepage": "https://ping12271.github.io",
   "type": "module",
   "scripts": {
     "dev": "vite",
