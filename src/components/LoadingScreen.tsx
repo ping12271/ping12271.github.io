@@ -174,7 +174,7 @@ export function LoadingScreen({
     >
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
       <div className="relative z-10 flex flex-col items-center">
-        <h2 data-animate="loading-text" className="text-white/80">
+        <h2 data-animate="loading-text" className="en text-white/80">
           LOADING
         </h2>
         <div

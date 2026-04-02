@@ -35,18 +35,6 @@ body {
   }
 }
 
-@keyframes moon {
-  0%,
-  100% {
-    transform: translateY(45%) rotate(-10deg) scale(1);
-    filter: blur(2px);
-  }
-  50% {
-    transform: translateY(50%) rotate(-5deg) scale(1.1);
-    filter: blur(0px);
-  }
-}
-
 @keyframes mars {
   0%,
   100% {
