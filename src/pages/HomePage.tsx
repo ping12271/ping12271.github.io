@@ -29,16 +29,16 @@ const HomeSection = () => {
 
       <div className="relative z-10 w-full px-8 lg:px-24 flex flex-col items-end text-right">
         <div className="mb-12">
-          <h1 className="portfolio-title en text-[14vw] font-black tracking-tighter text-gradient">
+          <h1 className="portfolio-title en text-[clamp(3.5rem,14vw,12rem)] font-black tracking-tighter text-gradient leading-[0.9]">
             Portfolio
           </h1>
-          <p className="sub-text text-[2.5vw] max-md:text-[1.5rem] font-light tracking-[0.5em] text-white/60 mr-2">
+          <p className="sub-text text-[clamp(1rem,2.5vw,2rem)] font-light tracking-[0.5em] text-white/60 mr-2">
             WEB PUBLISHER
           </p>
         </div>
 
         <div className="max-w-2xl mt-8">
-          <p className="sub-text text-white/80 text-[1.35rem] max-md:text-[1.1rem] leading-relaxed break-keep">
+          <p className="sub-text text-white/80 text-[clamp(1.1rem,2vw,1.35rem)] leading-relaxed break-keep">
             <strong className="text-gradient">
               안녕하세요, 5년 차 웹 퍼블리셔 신혜은입니다.
             </strong>
@@ -124,24 +124,24 @@ const WorkSection = () => {
   return (
     <section
       id="work"
-      className="relative w-screen py-40 lg:py-60 flex flex-col items-center"
+      className="relative w-screen py-[clamp(5rem,15vh,15rem)] flex flex-col items-center"
     >
       <div className="relative px-7 lg:px-24 w-full max-w-[1440px]">
         <div className="flex flex-col mb-32 relative">
-          <h2 className="en text-[15vw] font-black text-white/[0.06] absolute -top-24 -left-10 select-none">
+          <h2 className="en text-[clamp(5rem,15vw,12rem)] font-black text-white/[0.06] absolute -top-16 -left-10 select-none">
             ARCHIVE
           </h2>
           <div className="relative z-10 pl-2">
-            <h2 className="en text-8xl max-md:text-6xl mb-6 text-white">
+            <h2 className="en text-[clamp(3rem,8vw,6rem)] mb-6 text-white leading-none">
               Work
             </h2>
-            <p className="en text-gradient text-xl max-md:text-base font-medium uppercase opacity-90">
+            <p className="en text-gradient text-[clamp(1rem,2vw,1.25rem)] font-medium uppercase opacity-90">
               System UI & Component Architecture
             </p>
           </div>
         </div>
 
-        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-32 w-full relative z-10">
+        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-[clamp(4rem,10vw,8rem)] w-full relative z-10">
           {PROJECT_LIST.map((project) => (
             <li key={project.id} className="group relative">
               <a
@@ -191,7 +191,7 @@ const WorkSection = () => {
 const ContactSection = () => (
   <section
     id="contact"
-    className="relative min-h-svh flex flex-col justify-center items-center overflow-hidden px-7 lg:px-20 py-60"
+    className="relative min-h-svh flex flex-col justify-center items-center overflow-hidden px-7 lg:px-20 py-[clamp(5rem,15vh,10rem)]"
   >
     <div className="absolute right-[-10%] bottom-[-20%] -z-1 w-[120vw] opacity-40 pointer-events-none">
       <img
@@ -203,13 +203,13 @@ const ContactSection = () => (
 
     <div className="relative z-10 w-full max-w-[1200px] flex flex-col items-center text-center">
       <div className="en mb-24 relative group">
-        <h3 className="font-black text-[15vw] tracking-[-0.05em] leading-none text-white/5 absolute -top-16 left-1/2 -translate-x-1/2 select-none whitespace-nowrap">
+        <h3 className="font-black text-[clamp(4rem,15vw,12rem)] tracking-[-0.05em] leading-none text-white/5 absolute -top-12 left-1/2 -translate-x-1/2 select-none whitespace-nowrap">
           Get In Touch
         </h3>
-        <h3 className="font-black text-8xl max-md:text-5xl tracking-tighter text-gradient relative z-10">
+        <h3 className="font-black text-[clamp(2.5rem,8vw,6rem)] tracking-tighter text-gradient relative z-10">
           Contact Me
         </h3>
-        <p className="mt-4 text-white/40 text-lg tracking-[0.4em]">
+        <p className="mt-4 text-white/40 text-[clamp(0.9rem,1.5vw,1.125rem)] tracking-[0.4em]">
           Let's Build Something Great
         </p>
       </div>
