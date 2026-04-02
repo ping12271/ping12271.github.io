@@ -10,10 +10,33 @@ import admin2 from "@/assets/admin2.png";
 import pos from "@/assets/pos.png";
 import lemon from "@/assets/lemon.png";
 import eureka from "@/assets/eureka.png";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import MenuOverlay from "@/components/MenuOverlay";
+import { gsap } from "gsap";
 
 const HomeSection = () => {
+  const scope = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set(".char", { yPercent: -150, opacity: 0 });
+
+      gsap.to(".char", {
+        delay: 0.5,
+        yPercent: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "bounce.out",
+        stagger: {
+          each: 0.1,
+          from: "random",
+        },
+      });
+    }, scope);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
       id="home"
@@ -28,9 +51,16 @@ const HomeSection = () => {
       </div>
 
       <div className="relative z-10 w-full px-8 lg:px-24 flex flex-col items-end text-right">
-        <div className="mb-12">
-          <h1 className="portfolio-title en text-[clamp(3.5rem,14vw,12rem)] font-black tracking-tighter text-gradient leading-[0.9]">
-            Portfolio
+        <div ref={scope} className="mb-12">
+          <h1 className="overflow-hidden">
+            {"portfolio".split("").map((char, i) => (
+              <span
+                key={i}
+                className="char inline-block text-gradient font-black tracking-tighter leading-[0.9] en text-[clamp(3.5rem,14vw,12rem)]"
+              >
+                {char}
+              </span>
+            ))}
           </h1>
           <p className="sub-text text-[clamp(1rem,2.5vw,2rem)] font-light tracking-[0.5em] text-white/60 mr-2">
             WEB PUBLISHER

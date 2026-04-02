@@ -1,6 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "@/pages/HomePage";
-import Cursor from "./components/Cursor";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { useCallback, useEffect, useState } from "react";
 import SpaceBackground from "./components/SpaceBackground";
@@ -20,10 +19,8 @@ function App() {
 
   return (
     <>
-      <Cursor />
-
       {isLoading && (
-        <LoadingScreen minDurationMs={2000} onDone={handleLoadingDone} />
+        <LoadingScreen minDurationMs={1000} onDone={handleLoadingDone} />
       )}
       <BrowserRouter>
         <SpaceBackground />
