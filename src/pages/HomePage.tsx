@@ -84,8 +84,6 @@ const HomeSection = () => {
     </section>
   );
 };
-
-// const WorkSection = () => {
 //   const PROJECT_LIST = [
 //     {
 //       id: 1,
@@ -302,7 +300,6 @@ const WorkSection = () => {
             start: "top bottom-=100",
             end: "top center",
             scrub: 1.5,
-            markers: true,
           },
           y: i % 2 === 0 ? 80 : 180,
           opacity: 0,
